@@ -7,23 +7,23 @@ public class Board
 	Constants constant = new Constants();
 	Communication com = new Communication();
 	
-	public void init(int x, int y)
+	public void init(int col, int row)
 	{
-		_board = new int[x][y];
-		constant.setBoardSize(x, y);
+		_board = new int[row][col];
+		constant.setBoardSize(row, col);
 	}
 	public int[][] getBoard()
 	{
 		return _board;
 	}
 	
-	public void setOrigin(int y, int x, String orientation)
+	public void setOrigin(int row, int col, String orientation)
 	{
 		try
 		{
-			_board[x-1][y-1] = 1;
+			_board[row-1][col-1] = 1;
 			constant.setOrientation(orientation);
-			constant.setLocation(x, y);
+			constant.setLocation(row, col);
 		} catch (ArrayIndexOutOfBoundsException e) { com.print(MessageFormat.format(constant.wrongOriginMsg, getSize()));}
 	}
 	
@@ -67,43 +67,54 @@ public class Board
 			}
 		}
 		Point end = constant.getLocation();
-		com.print(String.valueOf(end.y) + " " + String.valueOf(end.x) +" "+ constant.COMPASS.get(constant.ORIENTATION) );
+		com.print(String.valueOf(end.x) + " " + String.valueOf(end.y) +" "+ constant.COMPASS.get(constant.ORIENTATION) );
 		if(constant.wallCount > 0) { com.print(MessageFormat.format(constant.wallMsg,constant.wallCount)); }
 	}
 	
 	public void move()
 	{
 		Point current = constant.getLocation();
-		
 		Point next = new Point();
 		switch(constant.getOrientation() )
 		{
 			case "N" :
-					next.y = current.y;
-					next.x = current.x + constant.NORTH;
-					push(current, next);
-					break;
+				//System.out.println("N");
+				//System.out.println(current.x + " " + current.y);
+				next.y = current.y + constant.NORTH;
+				next.x = current.x;
+				//System.out.println(next.x + " " + next.y);
+				push(current, next);
+				break;
 			case "E" :
-					next.y = current.y + constant.EAST;
-					next.x = current.x;
-					push(current, next);
-					break;
+				//System.out.println("E");
+				//System.out.println(current.x + " " + current.y);
+				next.y = current.y;
+				next.x = current.x + constant.EAST;
+				//System.out.println(next.x + " " + next.y);
+				push(current, next);
+				break;
 			case "S" :
-					next.y = current.y;
-					next.x = current.x + constant.SOUTH;
-					push(current, next);
-					break;
+				//System.out.println("S");
+				//System.out.println(current.x + " " + current.y);
+				next.y = current.y + constant.SOUTH;
+				next.x = current.x;
+				//System.out.println(next.x + " " + next.y);
+				push(current, next);
+				break;
 			case "W" :
-					next.y = current.y + constant.WEST;
-					next.x = current.x;
-					push(current, next);
-					break;
+				//System.out.println("W");
+				//System.out.println(current.x + " " + current.y);
+				next.y = current.y;
+				next.x = current.x + constant.WEST;
+				//System.out.println(next.x + " " + next.y);
+				push(current, next);
+				break;
 		}
 	}
 	
-	public int getElement(int x, int y)
+	public int getElement(int col, int row)
 	{
-		return _board[x-1][y-1];
+		return _board[col-1][row-1];
 	}
 	
 	public String getSize()

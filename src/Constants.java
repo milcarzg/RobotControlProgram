@@ -29,9 +29,9 @@ public class Constants
 	String wrongSizeMsg = "Minimum board size is 1 1";
 	int wallCount = 0;
 	
-	public void setBoardSize(int x, int y)
+	public void setBoardSize(int col, int row)
 	{
-		board = String.valueOf(x) + " x " + String.valueOf(y);
+		board = String.valueOf(col) + " x " + String.valueOf(row);
 	}
 	
 	public void increaseWall ()
@@ -39,9 +39,9 @@ public class Constants
 		wallCount = wallCount + 1;
 	}
 	
-	public void setLocation(int x, int y)
+	public void setLocation(int row, int col)
 	{
-		location.setLocation(x, y);
+		location.setLocation(row, col);
 	}
 	
 	public Point getLocation()
