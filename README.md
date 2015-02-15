@@ -8,4 +8,7 @@ Couple of changes
     
   - so example point : 0 0 E does not exist
     
-  -added extra message when user entered move combination that results in walking into wall
+- added extra message when user entered move combination that results in walking into wall
+
+
+- didn`t use any testing libraries, I only used System.out.println() for verifying
