@@ -10,7 +10,6 @@ public class Board
 	public void init(int col, int row)
 	{
 		_board = new int[row][col];
-		constant.setBoardSize(row, col);
 	}
 	public int[][] getBoard()
 	{

@@ -7,7 +7,6 @@ public class Constants
 {
 	ArrayList<String> COMPASS = new ArrayList<String>(Arrays.asList(new String[] {"N","E","S","W"}));
 	ArrayList<String> MOVES = new ArrayList<String>(Arrays.asList(new String[] {"R","L","F"}));
-	String board = null;
 	int LEFT = -1;
 	int RIGHT = 1;
 	int NORTH = -1;
@@ -24,14 +23,10 @@ public class Constants
 	String correctMoveMsg = "Enter movements : \n Correct input contains only letters without spaces (allowed letters 'R','L','F')";
 	String wrongMsg = "Wrong input";
 	String wallMsg = "You tried walking into wall {0} times " ;
-	String wrongOriginMsg = "Minimum start position is 1 1";
-	String wrongSizeMsg = "Minimum board size is 1 1";
+	String wrongOriginMsg = "Origin position has to be between 1 1 and ";
+	String wrongSizeMsg = "Minimum board size is 1 1 ";
 	int wallCount = 0;
 	
-	public void setBoardSize(int col, int row)
-	{
-		board = String.valueOf(col) + " x " + String.valueOf(row);
-	}
 	
 	public void increaseWall ()
 	{

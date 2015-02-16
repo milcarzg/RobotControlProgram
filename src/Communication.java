@@ -6,6 +6,8 @@ public class Communication
 {
 	private static String _text;
 	Constants constant = new Constants();
+	private int _row = 0;
+	private int _col = 0;
 	
 	public String read()
 	{
@@ -30,14 +32,16 @@ public class Communication
 				print(constant.wrongMsg);
 				print(constant.correctSizeMsg);
 			}
-			else if (Integer.valueOf(parts[0]) < 1 || Integer.valueOf(parts[0]) < 1)
+			else if (Integer.valueOf(parts[0]) < 1 || Integer.valueOf(parts[1]) < 1)
 			{
 				print(constant.wrongSizeMsg);
 				print(constant.correctSizeMsg);
 			}
 		} while  (parts.length != 2 || isNumeric(parts[0]) == false
 				|| isNumeric(parts[1]) == false 
-				|| Integer.valueOf(parts[0]) < 1 || Integer.valueOf(parts[0]) < 1);
+				|| Integer.valueOf(parts[0]) < 1 || Integer.valueOf(parts[1]) < 1);
+		_row = Integer.valueOf(parts[0]);
+		_col = Integer.valueOf(parts[1]);
 		return parts;
 	}
 	public String[] origin()
@@ -53,14 +57,16 @@ public class Communication
 				print(constant.wrongMsg);
 				print(constant.correctOriginMsg);
 			}
-			else if (Integer.valueOf(origin[0]) < 1 || Integer.valueOf(origin[1]) < 1)
+			else if (Integer.valueOf(origin[0]) < 1 || Integer.valueOf(origin[1]) < 1
+					|| Integer.valueOf(origin[0]) > _row || Integer.valueOf(origin[1]) > _col)
 			{
-				print(constant.wrongOriginMsg);
+				print(constant.wrongOriginMsg + _row + " "+ _col);
 				print(constant.originMsg);
 			}
 		} while ( (origin.length != 3 || isNumeric(origin[0]) == false || 
 				isNumeric(origin[1]) == false || constant.COMPASS.contains(origin[2]) == false) 
-				|| Integer.valueOf(origin[0]) < 1 || Integer.valueOf(origin[1]) < 1 );
+				|| Integer.valueOf(origin[0]) < 1 || Integer.valueOf(origin[1]) < 1
+				|| Integer.valueOf(origin[0]) > _row || Integer.valueOf(origin[1]) > _col);
 		return origin;
 	}
 	
