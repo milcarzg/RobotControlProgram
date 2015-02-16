@@ -115,5 +115,16 @@ EXAMPLES:
   RFLFFLRF  
   
   4 2 E 
+  
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+TESTS
+
+There are couple of tests created to verify that core methods are working correctly
+Test passed 9/9
+
+To run tests import project into Eclipse and run Tests.java class as jUnit Test.
+
 
 
