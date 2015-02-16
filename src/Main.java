@@ -2,7 +2,7 @@
 
 public class Main 
 {
-	private static String[] size;
+	private static String[] _size;
 	private static String[] _coordinates;
 	private static char[] _steps;
 	
@@ -14,9 +14,9 @@ public class Main
 		
 		com.print(constant.sizeMsg);
 		
-		size = com.boardSize();
+		_size = com.boardSize();
 		
-		board.init(Integer.valueOf(size[0]), Integer.valueOf(size[1]) );
+		board.init(Integer.valueOf(_size[0]), Integer.valueOf(_size[1]) );
 		
 		com.print(constant.originMsg);
 		
