@@ -80,25 +80,40 @@ EXAMPLES:
 
 1.
 
-Enter size of the room :  (X Y format)
-5 5 
-Enter start point and orientation :  (X Y Z format)
-1 2 N
-Enter movements :  (XYZ format)
-RFRFFRFRF
-1 3 N
+  Enter size of the room :  (X Y format)
+
+  5 5 
+
+  Enter start point and orientation :  (X Y Z format)
+
+  1 2 N
+
+  Enter movements :  (XYZ format)
+
+  RFRFFRFRF
+
+  1 3 N
 
 2.
 
-Enter size of the room :  (X Y format)
-5 5
-Enter start point and orientation :  (X Y Z format)
-0 0 E
-Origin position has to be between 1 1 and 5 5
-Enter start point and orientation :  (X Y Z format)
-1 1 E
-Enter movements :  (XYZ format)
-RFLFFLRF
-4 2 E
+  Enter size of the room :  (X Y format)  
+  
+  5 5 
+  
+  Enter start point and orientation :  (X Y Z format) 
+ 
+  0 0 E 
+ 
+  Origin position has to be between 1 1 and 5 5 
+  
+  Enter start point and orientation :  (X Y Z format) 
+  
+  1 1 E 
+  
+  Enter movements :  (XYZ format) 
+  
+  RFLFFLRF  
+  
+  4 2 E 
 
 
