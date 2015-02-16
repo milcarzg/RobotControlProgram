@@ -1,4 +1,8 @@
-
+/**
+ * Main class
+ * @author 6pM
+ *
+ */
 
 public class Main 
 {
@@ -9,23 +13,22 @@ public class Main
 	public static void main(String[] args)
 	{
 		Communication com = new Communication();
-		Constants constant = new Constants();
+		Global global = new Global();
 		Board board = new Board();
 		
-		com.print(constant.sizeMsg);
+		com.print(global.sizeMsg);
 		
 		_size = com.boardSize();
 		
 		board.init(Integer.valueOf(_size[0]), Integer.valueOf(_size[1]) );
 		
-		com.print(constant.originMsg);
+		com.print(global.originMsg);
 		
 		_coordinates = com.origin();
 		
-		
 		board.setOrigin(Integer.valueOf(_coordinates[0] ), Integer.valueOf(_coordinates[1] ), _coordinates[2] );
 		
-		com.print(constant.moveMsg);
+		com.print(global.moveMsg);
 		
 		_steps = com.movements();
 		

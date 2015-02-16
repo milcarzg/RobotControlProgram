@@ -2,10 +2,16 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-public class Constants 
+/**
+ * Class for global values.
+ * @author 6pM
+ *
+ */
+public class Global 
 {
+	//Array of possible orientations
 	ArrayList<String> COMPASS = new ArrayList<String>(Arrays.asList(new String[] {"N","E","S","W"}));
+	//Array of possible moves
 	ArrayList<String> MOVES = new ArrayList<String>(Arrays.asList(new String[] {"R","L","F"}));
 	int LEFT = -1;
 	int RIGHT = 1;
@@ -15,6 +21,7 @@ public class Constants
 	int EAST = 1;
 	int ORIENTATION = 0;
 	Point location = new Point();
+	//message definitions
 	String sizeMsg = "Enter size of the room :  (X Y format)";
 	String originMsg = "Enter start point and orientation :  (X Y Z format)";
 	String moveMsg = "Enter movements :  (XYZ format)";
@@ -42,20 +49,23 @@ public class Constants
 	{
 		return location;
 	}
-	
+	/**
+	 * Changes orientation of the robot
+	 * @param change
+	 */
 	public void changeOrientation(int change)
 	{
-		if (ORIENTATION + change == COMPASS.size())
+		if (ORIENTATION + change == COMPASS.size() )
 		{
 			setOrientation(COMPASS.get(0));
 		}
 		else if (ORIENTATION + change == -1)
 		{
-			setOrientation(COMPASS.get(3));
+			setOrientation(COMPASS.get(3) );
 		}
 		else
 		{
-			setOrientation(COMPASS.get(ORIENTATION+change));
+			setOrientation(COMPASS.get(ORIENTATION+change) );
 		}
 	}
 	
